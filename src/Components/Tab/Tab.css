@@ -1,0 +1,245 @@
+.tabs {
+  width: 850px;
+  height: 65px;
+  background-color: #e9ebec;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 0.75rem;
+  padding: 0 8px;
+  gap: 10px;
+
+  .span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    padding: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in all;
+  }
+
+  .span.active {
+    background: #fff;
+    color: #000000;
+  }
+
+  .span:hover {
+    background: #fff;
+    color: #000000;
+  }
+}
+
+.tab_content {
+  background: #fff;
+  margin-top: 10px;
+  border-radius: 5px;
+  height: min-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .project {
+    padding: 50px;
+    width: 750px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .thumbnail {
+      overflow: hidden;
+      width: 350px;
+      height: 200px;
+      border-radius: 20px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .popUp {
+        position: relative;
+        top: 20%;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        color: #fff;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(
+          108deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(0, 0, 0, 0.48783263305322133) 35%
+        );
+        transition: 0.3s all ease-in-out;
+        cursor: pointer;
+
+        .description {
+          padding: 15px;
+          width: 300px;
+          line-height: 25px;
+          font-size: 15px;
+          font-weight: 700;
+          font-family: "Poppins", sans-serif;
+        }
+
+        .title {
+          padding: 15px;
+          width: 300px;
+          position: relative;
+          bottom: 20px;
+          font-weight: 900;
+          font-family: "Poppins", sans-serif;
+        }
+
+        .link {
+          padding: 15px;
+          position: relative;
+          left: 290px;
+          bottom: 10px;
+          border-radius: 15px;
+          background-color: #42a5f5;
+          color: #fff;
+        }
+      }
+    }
+
+    .thumbnail:hover {
+      .popUp {
+        opacity: 1;
+        top: 0%;
+      }
+    }
+  }
+
+  .skills {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+      padding: 10px;
+      font-family: "Poppins", sans-serif;
+      border-bottom: 2px solid#42a5f5;
+    }
+
+    .content {
+      padding: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 50px;
+      width: 400px;
+
+      .one {
+        display: flex;
+        justify-content: flex-start;
+        gap: 5px;
+        width: 130px;
+
+        .subOne {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          flex-direction: column;
+
+          .language {
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 18px;
+            font-family: "Poppins", sans-serif;
+          }
+
+          .skil {
+            font-size: 0.813rem;
+            font-family: "Poppins", sans-serif;
+            color: #657481;
+          }
+        }
+      }
+    }
+  }
+
+  .aboutMe {
+    width: 700px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+      padding: 10px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 900;
+      border-bottom: 2px solid#42a5f5;
+    }
+
+    .story {
+      padding: 20px;
+      text-align: justify;
+      font-family: "Poppins", sans-serif;
+      color: #657481;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .tabs {
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+
+    .span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      padding: 17px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease-in all;
+    }
+}
+
+  .tab_content {
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .project {
+      padding: 10px;
+      width: 400px;
+      position: relative;
+      left: 10px;
+    }
+
+    .skills {
+      min-width: 320px;
+      max-width: 480px;
+      position: relative;
+      left: 9px;
+    }
+  }
+
+  .aboutMe{
+    position: relative;
+    min-width: 320px;
+    max-width: 480px;
+    left: 10px;
+    padding: 0px !important;
+  }
+}
