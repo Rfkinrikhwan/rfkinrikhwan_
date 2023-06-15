@@ -128,7 +128,15 @@
     .title {
       padding: 10px;
       font-family: "Poppins", sans-serif;
-      border-bottom: 2px solid#42a5f5;
+      border-radius: 2px;
+    }
+
+    .dark-title {
+      border-bottom: 3px solid #42a5f5 !important;
+    }
+
+    .light-title {
+      border-bottom: 3px solid #03001c !important;
     }
 
     .content {
@@ -181,7 +189,15 @@
       padding: 10px;
       font-family: "Poppins", sans-serif;
       font-weight: 900;
-      border-bottom: 2px solid#42a5f5;
+      border-radius: 2px;
+    }
+
+    .dark-me {
+      border-bottom: 3px solid#42a5f5 !important;
+    }
+
+    .light-me {
+      border-bottom: 3px solid #03001c !important;
     }
 
     .story {
@@ -211,7 +227,7 @@
       cursor: pointer;
       transition: 0.3s ease-in all;
     }
-}
+  }
 
   .tab_content {
     width: 350px;
@@ -234,11 +250,12 @@
     }
   }
 
-  .aboutMe{
+  .aboutMe {
     position: relative;
     min-width: 320px;
     max-width: 480px;
     left: 10px;
     padding: 0px !important;
+    margin-top: 50px;
   }
 }

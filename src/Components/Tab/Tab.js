@@ -3,9 +3,11 @@ import thubmnail1 from "../../Assets/portfolio.png";
 import thubmnail2 from "../../Assets/alquranvue.png";
 import "./Tab.css";
 import { FaLink, FaCheckCircle } from "react-icons/fa";
+import { useTheme } from "../../Context/Theme";
 
 export default function Tab() {
   const [activeTab, setActiveTab] = useState(1);
+  const theme = useTheme();
 
   const handleTabClick = (id) => {
     setActiveTab(id);
@@ -81,7 +83,7 @@ export default function Tab() {
         )}
         {activeTab === 2 && (
           <div className="skills">
-            <h3 className="title">Frontend Developer</h3>
+            <h3 className={`title ${theme.theme+'-title'}`}>Frontend Developer</h3>
             <div className="content">
               <div className="one">
                 <FaCheckCircle style={{ color: "#42a5f5" }} />
@@ -111,7 +113,7 @@ export default function Tab() {
                 <FaCheckCircle style={{ color: "#42a5f5" }} />
                 <div className="subOne">
                   <span className="language">REACT JS</span>
-                  <span className="skil">BASIC</span>
+                  <span className="skil">BEGINNER</span>
                 </div>
               </div>
             </div>
@@ -119,7 +121,7 @@ export default function Tab() {
         )}
         {activeTab === 3 && (
           <div className="aboutMe">
-            <h3 className="title">My Story</h3>
+            <h3 className={`title ${theme.theme+'-me'}`}>My Story</h3>
             <p className="story">
               hey guys my journey started when i was about to enter middle
               school. At first I didn't want to be a programmer, and I didn't
