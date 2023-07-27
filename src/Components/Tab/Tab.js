@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import thubmnail1 from "../../Assets/portfolio.png";
-import thubmnail2 from "../../Assets/alquranvue.png";
+import thumbnail1 from "../../Assets/portfolio.png";
+import thumbnail2 from "../../Assets/alquranvue.png";
+import thumbnail3 from "../../Assets/NewsApp.png";
 import "./Tab.css";
 import { FaLink, FaCheckCircle } from "react-icons/fa";
 import { useTheme } from "../../Context/Theme";
@@ -16,20 +17,27 @@ export default function Tab() {
   const project = [
     {
       id: 1,
-      thumbnail: thubmnail1,
+      thumbnail: thumbnail1,
       description:
         "This page is my portfolio website, which I will keep updating",
       title: "Portfolio",
       link: "/",
     },
-
     {
       id: 2,
-      thumbnail: thubmnail2,
+      thumbnail: thumbnail2,
       description:
         "I created this project using the vue js framework and boostrap",
       title: "Al-Quran",
       link: "https://simple-quran.vercel.app/menu",
+    },
+    {
+      id: 3,
+      thumbnail: thumbnail3,
+      description:
+        "Hi guys, this is a website that displays news from various channels",
+      title: "Chrono Press",
+      link: "https://chorono-press.vercel.app/",
     },
   ];
 

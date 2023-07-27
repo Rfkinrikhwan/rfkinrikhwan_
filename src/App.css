@@ -60,7 +60,8 @@
           align-items: center;
 
           .img {
-            width: 145px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
           }
         }
@@ -135,7 +136,7 @@
           align-items: center;
 
           .portfolio {
-            width: 130px;
+            width: 180px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -146,6 +147,7 @@
             border-radius: 0.5rem;
             transition: 0.35s;
             box-shadow: 0 3px 10px #42a5f5;
+            border: none;
           }
 
           .btn_small {

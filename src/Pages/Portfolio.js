@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Tab from "../Components/Tab/Tab";
-import foto from "../Assets/rifki.jpeg";
+import foto from "../Assets/profile.jpg";
 import {
   FaFacebook,
   FaGithub,
@@ -9,13 +9,17 @@ import {
   FaWhatsapp,
   FaTelegramPlane,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { useTheme } from "../Context/Theme";
 import Button from "../Components/ButtonTheme/Button";
+import Popup from "../Components/PopUp/Popup";
 
 export default function Portfolio() {
+  const [popUp, setPopUp] = useState(false);
   const theme = useTheme();
-  //   const { theme, setDarkMode, setLightMode } = ThemeContext;
+
+  const togglePopUp = () => {
+    setPopUp(!popUp);
+  };
 
   const medsos = {
     github: "https://github.com/Rfkinrikhwan",
@@ -23,8 +27,6 @@ export default function Portfolio() {
     instagram: "https://www.instagram.com/rfkinrikhwan_/",
     linkedin: "https://www.linkedin.com/in/rfkinrikhwan/",
   };
-
-  console.log(theme.theme);
 
   return (
     <div className={`container ${theme.theme}`}>
@@ -40,24 +42,24 @@ export default function Portfolio() {
 
             <div className="icon">
               <span>
-                <Link href={medsos.facebook} target="_blank">
+                <a href={medsos.facebook}>
                   <FaFacebook className={`icons ${theme.theme}`} />
-                </Link>
+                </a>
               </span>
               <span>
-                <Link href={medsos.github} target="_blank">
+                <a href={medsos.github}>
                   <FaGithub className={`icons ${theme.theme}`} />
-                </Link>
+                </a>
               </span>
               <span>
-                <Link href={medsos.instagram} target="_blank">
+                <a href={medsos.instagram}>
                   <FaInstagram className={`icons ${theme.theme}`} />
-                </Link>
+                </a>
               </span>
               <span>
-                <Link href={medsos.linkedin} target="_blank">
+                <a href={medsos.linkedin}>
                   <FaLinkedinIn className={`icons ${theme.theme}`} />
-                </Link>
+                </a>
               </span>
             </div>
 
@@ -67,7 +69,7 @@ export default function Portfolio() {
                 <p className="text">Years Of Work</p>
               </div>
               <div className="decs-group">
-                <h3>1</h3>
+                <h3>2</h3>
                 <p className="text">Completed projects</p>
               </div>
               <div className="decs-group">
@@ -78,19 +80,20 @@ export default function Portfolio() {
 
             <div className="btn">
               <div className="btn_small">
-                <Link href={`#`} className="wa">
+                <button href={`#`} className="wa">
                   <FaWhatsapp />
-                </Link>
-                <Link href={`#`} className="tele">
+                </button>
+                <button href={`#`} className="tele" onClick={() => setPopUp(true)}>
                   <FaTelegramPlane />
-                </Link>
+                </button>
               </div>
-              <Link href={`#`} className="portfolio">
+              <button href={`#`} className="portfolio">
                 Cooming Soon
-              </Link>
+              </button>
             </div>
             <Tab />
             <Button />
+            <Popup value={popUp} onClose={togglePopUp} />
           </div>
         </div>
       </div>
