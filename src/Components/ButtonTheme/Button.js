@@ -1,33 +1,34 @@
-import "./Button.css";
-import React from "react";
+import React, { useState } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { useTheme } from "../../Context/Theme";
+import "./Button.css";
 
 export default function Button() {
   const themeContext = useTheme();
   const { theme, setDarkMode, setLightMode } = themeContext;
 
-  //   console.log(theme);
+  const [isRotated, setIsRotated] = useState(false);
+
+  const handleClick = () => {
+    setIsRotated(!isRotated);
+    setTimeout(() => {
+      if (theme === "light") {
+        setDarkMode();
+      } else {
+        setLightMode();
+      }
+    }, 300);
+  };
 
   return (
     <div className="wrap-btn">
-      {theme === "light" ? (
-        <button
-          onClick={setDarkMode}
-          className="mode"
-          style={{ color: theme === "light" ? "#000" : "#000" }}
-        >
-          <FaMoon />
-        </button>
-      ) : (
-        <button
-          onClick={setLightMode}
-          className="mode"
-          style={{ color: theme === "dark" ? "#fff" : "#fff" }}
-        >
-          <FaSun />
-        </button>
-      )}
+      <button
+        onClick={handleClick}
+        className={`mode ${isRotated ? "rotate" : ""}`}
+        style={{ color: theme === "light" ? "#000" : "#fff" }}
+      >
+        {theme === "light" ? <FaMoon /> : <FaSun />}
+      </button>
     </div>
   );
 }

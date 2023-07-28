@@ -159,7 +159,8 @@
             gap: 10px;
 
             .wa {
-              padding: 10px;
+              width: 45px;
+              height: 45px;
               background-color: #e9ebec;
               color: #000000;
               font-size: 20px;
@@ -170,7 +171,8 @@
             }
 
             .tele {
-              padding: 10px;
+              width: 45px;
+              height: 45px;
               background-color: #e9ebec;
               color: #000000;
               font-size: 20px;

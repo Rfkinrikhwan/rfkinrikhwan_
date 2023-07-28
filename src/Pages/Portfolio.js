@@ -28,6 +28,16 @@ export default function Portfolio() {
     linkedin: "https://www.linkedin.com/in/rfkinrikhwan/",
   };
 
+  const handleThemeChange = () => {
+    setTimeout(() => {
+      if (theme.theme === "light") {
+        theme.setDarkMode();
+      } else {
+        theme.setLightMode();
+      }
+    }, 500);
+  };
+
   return (
     <div className={`container ${theme.theme}`}>
       <div className="wrap">
@@ -88,11 +98,11 @@ export default function Portfolio() {
                 </button>
               </div>
               <button href={`#`} className="portfolio">
-                Cooming Soon
+                Coming Soon
               </button>
             </div>
             <Tab />
-            <Button />
+            <Button onClick={handleThemeChange} />
             <Popup value={popUp} onClose={togglePopUp} />
           </div>
         </div>

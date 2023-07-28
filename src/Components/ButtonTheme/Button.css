@@ -16,5 +16,10 @@
     border: none;
     font-size: 30px;
     background: transparent;
+    transition: transform .5s ease;
+  }
+
+  .mode.rotate {
+    transform: rotate(180deg);
   }
 }
