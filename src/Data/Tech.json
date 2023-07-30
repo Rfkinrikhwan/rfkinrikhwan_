@@ -1,0 +1,46 @@
+{
+    "data": [
+        {
+            "id" : 1,
+            "img": "html.svg",
+            "tech": "HTML",
+            "level": "Expert"
+        },
+        {
+            "id" : 2,
+            "img": "css.svg",
+            "tech": "CSS",
+            "level": "Expert"
+        },
+        {
+            "id" : 3,
+            "img": "javascript.svg",
+            "tech": "JAVASCRIPT",
+            "level": "Intermediate"
+        },
+        {
+            "id" : 4,
+            "img": "vue.svg",
+            "tech": "VUE",
+            "level": "Intermediate"
+        },
+        {
+            "id" : 5,
+            "img": "react.svg",
+            "tech": "REACT",
+            "level": "Beginner"
+        },
+        {
+            "id" : 6,
+            "img": "bootstrap.svg",
+            "tech": "Bootstrap",
+            "level": "Intermediate"
+        },
+        {
+            "id" : 7,
+            "img": "tailwind.svg",
+            "tech": "Tailwind",
+            "level": "Intermediate"
+        }
+    ]
+}

@@ -5,14 +5,18 @@ import thumbnail3 from "../../Assets/NewsApp.png";
 import "./Tab.css";
 import { FaLink, FaCheckCircle } from "react-icons/fa";
 import { useTheme } from "../../Context/Theme";
+import Tech from "../../Data/Tech.json";
 
 export default function Tab() {
   const [activeTab, setActiveTab] = useState(1);
   const theme = useTheme();
+  const tech = Tech.data
 
   const handleTabClick = (id) => {
     setActiveTab(id);
   };
+
+  console.log(theme.theme)
 
   const project = [
     {
@@ -46,20 +50,17 @@ export default function Tab() {
       <div className="tabs">
         <span
           className={activeTab === 1 ? "active span" : "span"}
-          onClick={() => handleTabClick(1)}
-        >
+          onClick={() => handleTabClick(1)}>
           Project
         </span>
         <span
           className={activeTab === 2 ? "active span" : "span"}
-          onClick={() => handleTabClick(2)}
-        >
-          Skills
+          onClick={() => handleTabClick(2)}>
+          Tech
         </span>
         <span
           className={activeTab === 3 ? "active span" : "span"}
-          onClick={() => handleTabClick(3)}
-        >
+          onClick={() => handleTabClick(3)}>
           About Me
         </span>
       </div>
@@ -71,8 +72,7 @@ export default function Tab() {
               <div
                 className="thumbnail"
                 key={data.id}
-                style={{ backgroundImage: `url(${data.thumbnail})` }}
-              >
+                style={{ backgroundImage: `url(${data.thumbnail})` }}>
                 <div className="popUp">
                   <span className="description">{data.description}</span>
                   <h3 className="title">{data.title}</h3>
@@ -80,8 +80,7 @@ export default function Tab() {
                     href={data.link}
                     className="link"
                     target="_blank"
-                    rel="noreferrer"
-                  >
+                    rel="noreferrer">
                     <FaLink />
                   </a>
                 </div>
@@ -91,45 +90,23 @@ export default function Tab() {
         )}
         {activeTab === 2 && (
           <div className="skills">
-            <h3 className={`title ${theme.theme+'-title'}`}>Frontend Developer</h3>
+            <h3 className={`title ${theme.theme + "-title"}`}>Frontend Tech</h3>
             <div className="content">
-              <div className="one">
-                <FaCheckCircle style={{ color: "#42a5f5" }} />
-                <div className="subOne">
-                  <span className="language">HTML & CSS</span>
-                  <span className="skil">EXPERT</span>
+              {tech.map((data) => (
+                <div className={`one ${theme.theme + "-one"}`} key={data.id}>
+                    <img src={data.img} alt="Tech Stack" className="tech-img"/>
+                  <div className="subOne">
+                    <span className="language">{data.tech}</span>
+                    <span className="skil">{data.level}</span>
+                  </div>
                 </div>
-              </div>
-
-              <div className="one">
-                <FaCheckCircle style={{ color: "#42a5f5" }} />
-                <div className="subOne">
-                  <span className="language">JAVASCRIPT</span>
-                  <span className="skil">MEDIUM</span>
-                </div>
-              </div>
-
-              <div className="one">
-                <FaCheckCircle style={{ color: "#42a5f5" }} />
-                <div className="subOne">
-                  <span className="language">VUE JS</span>
-                  <span className="skil">MEDIUM</span>
-                </div>
-              </div>
-
-              <div className="one">
-                <FaCheckCircle style={{ color: "#42a5f5" }} />
-                <div className="subOne">
-                  <span className="language">REACT JS</span>
-                  <span className="skil">BEGINNER</span>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         )}
         {activeTab === 3 && (
           <div className="aboutMe">
-            <h3 className={`title ${theme.theme+'-me'}`}>My Story</h3>
+            <h3 className={`title ${theme.theme + "-me"}`}>My Story</h3>
             <p className="story">
               hey guys my journey started when i was about to enter middle
               school. At first I didn't want to be a programmer, and I didn't

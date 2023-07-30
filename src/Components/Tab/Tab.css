@@ -59,6 +59,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      box-shadow: 0px 0px 15px -3px #657481;
 
       .popUp {
         position: relative;
@@ -119,11 +120,12 @@
   }
 
   .skills {
-    padding: 50px;
+    /* padding: 50px; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 850px;
 
     .title {
       padding: 10px;
@@ -140,19 +142,34 @@
     }
 
     .content {
-      padding: 50px;
+      padding: 40px;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
       gap: 50px;
-      width: 400px;
+      width: 850px;
+
+      .dark-one{
+        border: 2px solid #fff !important;
+        box-shadow: 10px 8px 0px 0px #657481 !important;
+        color: white !important;
+      }
 
       .one {
         display: flex;
-        justify-content: flex-start;
-        gap: 5px;
-        width: 130px;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        border: 2px solid black;
+        padding: 10px;
+        border-radius: 5px;
+        width: 250px;
+        box-shadow: 10px 8px 0px 0px rgba(0,0,0,0.1);
+
+        .tech-img {
+          width: 50px;
+        }
 
         .subOne {
           display: flex;
@@ -161,7 +178,8 @@
           flex-direction: column;
 
           .language {
-            font-size: 1rem;
+            display: block;
+            font-size: 20px;
             font-weight: 500;
             line-height: 18px;
             font-family: "Poppins", sans-serif;
@@ -247,6 +265,10 @@
       max-width: 480px;
       position: relative;
       left: 9px;
+
+      .content{
+        flex-direction: column;
+      }
     }
   }
 
