@@ -12,13 +12,26 @@ import {
 import { useTheme } from "../Context/Theme";
 import Button from "../Components/ButtonTheme/Button";
 import Popup from "../Components/PopUp/Popup";
+import imgTele from "../Assets/tele.png";
+import imgWa from "../Assets/wa.png";
+import imgPP from "../Assets/puh.jpeg";
 
 export default function Portfolio() {
-  const [popUp, setPopUp] = useState(false);
+  const [popUpTele, setPopUpTele] = useState(false);
+  const [popUpWa, setPopUpWa] = useState(false);
+  const [popUpPp, setPopUpPp] = useState(false);
   const theme = useTheme();
 
-  const togglePopUp = () => {
-    setPopUp(!popUp);
+  const togglePopUpTele = () => {
+    setPopUpTele(!popUpTele);
+  };
+
+  const togglePopUpWa = () => {
+    setPopUpWa(!popUpWa);
+  };
+
+  const togglePopUpPp = () => {
+    setPopUpPp(!popUpPp);
   };
 
   const medsos = {
@@ -43,7 +56,7 @@ export default function Portfolio() {
       <div className="wrap">
         <div className="top">
           <div className="profile">
-            <div className={`foto ${theme.theme}`}>
+            <div className={`foto ${theme.theme}`} onClick={() => setPopUpPp(true)}>
               <img src={foto} className="img" alt="hallodek"></img>
             </div>
 
@@ -90,10 +103,16 @@ export default function Portfolio() {
 
             <div className="btn">
               <div className="btn_small">
-                <button href={`#`} className="wa">
+                <button
+                  href={`#`}
+                  className="wa"
+                  onClick={() => setPopUpWa(true)}>
                   <FaWhatsapp />
                 </button>
-                <button href={`#`} className="tele" onClick={() => setPopUp(true)}>
+                <button
+                  href={`#`}
+                  className="tele"
+                  onClick={() => setPopUpTele(true)}>
                   <FaTelegramPlane />
                 </button>
               </div>
@@ -103,7 +122,9 @@ export default function Portfolio() {
             </div>
             <Tab />
             <Button onClick={handleThemeChange} />
-            <Popup value={popUp} onClose={togglePopUp} />
+            <Popup value={popUpTele} onClose={togglePopUpTele} img={imgTele} />
+            <Popup value={popUpWa} onClose={togglePopUpWa} img={imgWa} />
+            <Popup value={popUpPp} onClose={togglePopUpPp} img={imgPP} style={{width:'250px',height: '250px',borderRadius: '10px'}} />
           </div>
         </div>
       </div>

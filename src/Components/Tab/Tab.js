@@ -3,7 +3,7 @@ import thumbnail1 from "../../Assets/portfolio.png";
 import thumbnail2 from "../../Assets/alquranvue.png";
 import thumbnail3 from "../../Assets/NewsApp.png";
 import "./Tab.css";
-import { FaLink, FaCheckCircle } from "react-icons/fa";
+import { FaLink } from "react-icons/fa";
 import { useTheme } from "../../Context/Theme";
 import Tech from "../../Data/Tech.json";
 
@@ -15,8 +15,6 @@ export default function Tab() {
   const handleTabClick = (id) => {
     setActiveTab(id);
   };
-
-  console.log(theme.theme)
 
   const project = [
     {
