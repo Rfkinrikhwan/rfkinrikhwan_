@@ -106,19 +106,7 @@ export default function Tab() {
           <div className="aboutMe">
             <h3 className={`title ${theme.theme + "-me"}`}>My Story</h3>
             <p className="story">
-              hey guys my journey started when i was about to enter middle
-              school. At first I didn't want to be a programmer, and I didn't
-              know what a programmer was. Previously my dream was to become an
-              architect who would design houses. as time goes by I keep thinking
-              am I taking the wrong major? and I live my day as a person who
-              doesn't care about the future. And all that changed when I did an
-              internship at a PT in my city, this is where my love for
-              programming started, and until now I have found my direction in
-              life. I also feel that my personality is not like what I used to
-              know, now I can be more confident because I always meet lots of
-              people. In fact, it's not only that I'm always alone, but because
-              I'm not perfect because I have a disability. ok guys thanks for
-              reading my story byee..
+              .....
             </p>
           </div>
         )}
